@@ -1,0 +1,4 @@
+# Ignore log files in the output folder
+output/*
+!output/*tex
+!output/*pdf

@@ -1,0 +1,114 @@
+<?xml version="1.0" ?>
+
+<!-- Category -->
+
+<!--
+Params can be changed to replace their names with custom ones.
+All categories are optional except head.
+-->
+
+<category summary="" skills="" experiences="" projects="" educations="" languages="">
+
+    <!-- Head -->
+
+    <!--
+    author: Your name.
+    icon: Font Awesome's icon name
+    link: Full link.
+    name: Link's name.
+    -->
+
+    <head author="Your Name">
+        <contact icon="Linkedin" link="https://www.linkedin.com/in/example/" name="My Linkedin"/>
+        <contact icon="Github" link="https://github.com/example" name="My Github"/>
+    </head>
+
+    <!-- Summary -->
+
+    <!-- area: Your description. -->
+
+    <summary area="Your description."/>
+
+    <!-- Skills -->
+
+    <!-- 
+    field name: Field related to skill.
+    skill name: Self explanatory.
+    -->
+
+    <skills>
+        <field name="Backend">
+            <skill name="Python"/>
+            <skill name="Rust"/>
+            <skill name="Java"/>
+        </field>
+        <field name="Frontend">
+            <skill name="HTML"/>
+            <skill name="CSS"/>
+            <skill name="Javascript"/>
+        </field>
+    </skills>
+
+    <!-- Experience -->
+
+    <!--
+    role: Role in the company.
+    company: Company's name.
+    date: Duration.
+    text: Description of what you did at the company.
+    -->
+
+    <experiences>
+        <experience role="Data Analyst" company="Facebook" date="2010 - 2014">
+            <info text="I did that."/>
+            <info text="And also that."/>
+        </experience>
+    </experiences>
+
+    <!-- Projects -->
+
+    <!--
+    name: Project's name.
+    ref icon/link/name: Same as head.
+    text: Project's description.
+    -->
+
+    <projects>
+        <project name="My Project">
+            <refs>
+                <ref icon="Globe" link="https://www.mypage.com/example/" name="Webpage"/>
+                <ref icon="Github" link="https://github.com/name/myproject" name="Github"/>
+            </refs>
+            <description>
+                <info text="I did that."/>
+                <info text="And also that."/>
+            </description>
+        </project>
+    </projects>
+
+    <!-- Education -->
+
+    <!--
+    field: Academic background.
+    institution: Name of the place where you studied.
+    date: Duration.
+    local: Regional position.
+    -->
+
+    <educations>
+        <education field="Software Engineering" institution="Harvard" date="2006 - 2010" local="Cambridge, EUA"/>
+    </educations>
+
+    <!-- Languages -->
+
+    <!--
+    name: Language.
+    level: Skill level.
+    -->
+
+    <languages>
+        <language name="English" level="Native"/>
+        <language name="Japanese" level="Intermediate"/>
+    </languages>
+    
+</category>
