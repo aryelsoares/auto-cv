@@ -1,114 +1,94 @@
 <?xml version="1.0" ?>
 
-<!-- Category -->
+<category summary="Resume" experiences="Experience" projects="Featured Projects" educations="Education" skills="Skills">
 
-<!--
-Params can be changed to replace their names with custom ones.
-All categories are optional except head.
--->
+    <!-- Heading -->
 
-<category summary="" skills="" experiences="" projects="" educations="" languages="">
-
-    <!-- Head -->
-
-    <!--
-    author: Your name.
-    icon: Font Awesome's icon name
-    link: Full link.
-    name: Link's name.
-    -->
-
-    <head author="Your Name">
-        <contact icon="Linkedin" link="https://www.linkedin.com/in/example/" name="My Linkedin"/>
-        <contact icon="Github" link="https://github.com/example" name="My Github"/>
+    <head author="Aryel Soares" career="Backend Developer">
+        <contact icon="Envelope" link="" name="aryelsoares.dev@gmail.com"/>
+        <contact icon="Globe" link="https://aryelsoares.vercel.app" name="Portfolio"/>
+        <contact icon="Linkedin" link="https://www.linkedin.com/in/aryelsoares" name="Linkedin"/>
+        <contact icon="Github" link="https://github.com/aryelsoares" name="GitHub"/>
     </head>
 
     <!-- Summary -->
 
-    <!-- area: Your description. -->
-
-    <summary area="Your description."/>
-
-    <!-- Skills -->
-
-    <!-- 
-    field name: Field related to skill.
-    skill name: Self explanatory.
-    -->
-
-    <skills>
-        <field name="Backend">
-            <skill name="Python"/>
-            <skill name="Rust"/>
-            <skill name="Java"/>
-        </field>
-        <field name="Frontend">
-            <skill name="HTML"/>
-            <skill name="CSS"/>
-            <skill name="Javascript"/>
-        </field>
-    </skills>
-
-    <!-- Experience -->
-
-    <!--
-    role: Role in the company.
-    company: Company's name.
-    date: Duration.
-    text: Description of what you did at the company.
-    -->
-
-    <experiences>
-        <experience role="Data Analyst" company="Facebook" date="2010 - 2014">
-            <info text="I did that."/>
-            <info text="And also that."/>
-        </experience>
-    </experiences>
+    <summary area="Early-career mathematician and programmer with a solid foundation in programming logic and data analysis. I am interested in automation, systems integration, and AI applications, seeking my first opportunity to work on developing solutions that optimize processes and meet real customer needs."/>
 
     <!-- Projects -->
 
-    <!--
-    name: Project's name.
-    ref icon/link/name: Same as head.
-    text: Project's description.
-    -->
-
     <projects>
-        <project name="My Project">
+        <project name="Stringler">
             <refs>
-                <ref icon="Globe" link="https://www.mypage.com/example/" name="Webpage"/>
-                <ref icon="Github" link="https://github.com/name/myproject" name="Github"/>
+                <ref icon="Github" link="https://github.com/aryelsoares/clusters" name="GitHub"/>
             </refs>
             <description>
-                <info text="I did that."/>
-                <info text="And also that."/>
+                <info text="Faced with the need to automate and analyze multiple textual documents efficiently, I built a
+modular NLP pipeline with a Rust analytics core and Python scripts for sentiment analysis, visualization, and reporting. The tool generates statistical and sentiment insights in a customizable
+template with text and graphics using Matplotlib and Pillow."/>
+            </description>
+        </project>
+        <project name="Hardware Benchmark">
+            <refs>
+                <ref icon="Github" link="https://github.com/aryelsoares/datalink" name="GitHub"/>
+            </refs>
+            <description>
+                <info text="To address the lack of real-time PC component monitoring, I designed a system to collect and
+display performance data (CPU, GPU, RAM) in real time. Built using Rust, InfluxDB, and Grafana
+in Docker Compose, it delivers dashboards with usage, temperature, and energy metrics from
+multiple IoT sensor inputs, facilitating access to inferential analysis." />
             </description>
         </project>
     </projects>
 
     <!-- Education -->
 
-    <!--
-    field: Academic background.
-    institution: Name of the place where you studied.
-    date: Duration.
-    local: Regional position.
-    -->
-
     <educations>
-        <education field="Software Engineering" institution="Harvard" date="2006 - 2010" local="Cambridge, EUA"/>
-    </educations>
+        <education
+            field="Bachelor's degree in applied mathematics"
+            institution="FURG"
+            date="2020 - 2024"
+            grade="Numerical Calculus, Linear Algebra, Analytical Geometry, Descriptive and Inferential Statistics. Probability, Operations Research, Econometrics, Finance."/>
+        </educations>
 
-    <!-- Languages -->
+    <!-- Skills -->
 
-    <!--
-    name: Language.
-    level: Skill level.
-    -->
+    <skills>
+        <!-- Idiomas -->
+        <field name="Languages">
+            <skill name="Portuguese (Native)"/>
+            <skill name="English (Intermediate)"/>
+        </field>
+        <!-- Backend -->
+        <field name="Backend">
+            <skill name="Rust"/>
+            <skill name="Python"/>
+            <skill name="Tensorflow"/>
+            <skill name="NodeJS"/>
+        </field>
+        <!-- Frontend -->
+        <field name="Frontend">
+            <skill name="JavaScript"/>
+            <skill name="TypeScript"/>
+            <skill name="React"/>
+            <skill name="Tailwind"/>
+        </field>
+        <!-- DevOps -->
+        <field name="DevOps">
+            <skill name="Bash"/>
+            <skill name="Git"/>
+            <skill name="Docker"/>
+        </field>
+        <!-- Storage -->
+        <field name="Storage">
+            <skill name="MySQL"/>
+            <skill name="PostgreSQL"/>
+            <skill name="InfluxDB"/>
+        </field>
+        <!-- Tools -->
+        <field name="Tools">
+            <skill name="Grafana"/>
+        </field>
+    </skills>
 
-    <languages>
-        <language name="English" level="Native"/>
-        <language name="Japanese" level="Intermediate"/>
-    </languages>
-    
 </category>

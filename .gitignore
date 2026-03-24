@@ -2,3 +2,8 @@
 output/*
 !output/*tex
 !output/*pdf
+
+# Ignore Pytest
+tests/__pycache__
+modules/__pycache__
+.pytest_cache
