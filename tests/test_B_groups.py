@@ -71,7 +71,7 @@ def test_education(cv):
     data = r'''\customsection{Education}
 
 \begin{itemize}[label=$\bullet$, leftmargin=*]
-\item \textbf{Software Engineering}, \textbf{Harvard}\hfill \faCalendar\ \textit{2006 - 2010} \\[10pt]\textbf{Grade}: Description.
+\item \textbf{Software Engineering} | \textbf{Harvard}\hfill \faCalendar\ \textit{2006 - 2010} \\[10pt]\textbf{Grade}: Description.
 \end{itemize}'''
 
     assert normalize(groups.education(cv)) == normalize(data)
