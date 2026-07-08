@@ -7,7 +7,7 @@ Params can be changed to replace their names with custom ones.
 All categories are optional except head.
 -->
 
-<category summary="" experiences="" projects="" educations="" skills="">
+<category summary="" experiences="" projects="" educations="" skills="" languages="">
     <!-- Head -->
 
     <!--
@@ -16,11 +16,13 @@ All categories are optional except head.
     icon: Font Awesome's icon name.
     link: Full link.
     name: Link's name.
+    line: Line position.
     -->
 
     <head author="Your Name" career="Profession" >
-        <contact icon="Linkedin" link="https://www.linkedin.com/in/example/" name="My Linkedin"/>
-        <contact icon="Github" link="https://github.com/example" name="My Github"/>
+        <contact icon="Envelope" link="" name="My Email" line="1"/>
+        <contact icon="Linkedin" link="https://www.linkedin.com/in/example/" name="My Linkedin" line="2"/>
+        <contact icon="Github" link="https://github.com/example" name="My Github" line="2"/>
     </head>
 
     <!-- Summary -->
@@ -73,6 +75,7 @@ All categories are optional except head.
     institution: Name of the place where you studied.
     date: Duration.
     local: Regional position.
+    grade: Additional information.
     -->
 
     <educations>
@@ -98,4 +101,17 @@ All categories are optional except head.
             <skill name="Javascript"/>
         </field>
     </skills>
+    
+    <!-- Languages -->
+    
+    <!--
+    name: Name of the language.
+    level: Native, advanced, intermediate...
+    desc: Additional information. (optional)
+    -->
+    
+    <languages>
+        <language name="English" level="Native"/>
+        <language name="Spanish" level="Intermediate" desc="Description"/>
+    </languages>
 </category>

@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[left=0.75in,right=0.75in,top=0.75in,bottom=0.75in]{geometry}
+\usepackage{enumitem}
+\usepackage[T1]{fontenc}
+\usepackage{xcolor}
+\usepackage[
+    colorlinks=true,
+    urlcolor=blue
+]{hyperref}
+\usepackage{fontawesome}
+
+\usepackage[scaled]{helvet}
+\renewcommand\familydefault{\sfdefault} 
+
+\input{glyphtounicode}
+\pdfgentounicode=1
+
+\newcommand{\customsection}[1]{
+    \section*{{{\textbf{\textit{#1}}}}}
+
+    \vspace{-2em}
+    \rule{\textwidth}{0.4pt}
+
+}
+
+\begin{document}
+
+\pagestyle{empty}
+
+\centerline{\textbf{\Huge Your Name}}
+
+\bigskip
+
+\centerline{\textbf{\Large Profession}}
+
+\bigskip
+
+\centerline{\faEnvelope \hspace{0.1cm} {My Email}}\vspace{0.3em}
+\centerline{\faLinkedin \hspace{0.1cm} \href{https://www.linkedin.com/in/example/}{\underline{My Linkedin}} | \faGithub \hspace{0.1cm} \href{https://github.com/example}{\underline{My Github}}}\vspace{0.3em}
+
+\customsection{Summary}
+
+\vspace{1.5em}
+
+Your description.
+
+\customsection{Work Experience}
+
+\begin{itemize}[leftmargin=*]
+	\item \textbf{Data Analyst} ( \faInstitution \hspace{0.05cm} Facebook | \faCalendar \hspace{0.1cm} 2010 - 2014 )\vspace{0.5em} \\
+I did this. \\
+	And also that.
+\end{itemize}
+
+\customsection{Featured Projects}
+
+\begin{itemize}[label=$\bullet$, leftmargin=*]
+	\item \textbf{My Project} ( \faGlobe \hspace{0.1cm} \href{https://www.mypage.com/example/}{\underline{Webpage}}  | \faGithub \hspace{0.1cm} \href{https://github.com/name/myproject}{\underline{Github}} )\vspace{0.5em} \\
+	- I did this. \\
+	- And also that.
+\end{itemize}
+
+\customsection{Education}
+
+\begin{itemize}[label=$\bullet$, leftmargin=*]
+\item \textbf{Software Engineering} | \textbf{Harvard}\hfill \faCalendar\ \textit{2006 - 2010} \\[10pt]\textbf{grade}: Description.
+\end{itemize}
+
+\customsection{Technical Skills}
+
+\begin{itemize}[label=$\bullet$, leftmargin=*]
+	\item \textbf{Backend}: Python, Rust, Java
+	\item \textbf{Frontend}: HTML, CSS, Javascript
+\end{itemize}
+
+\customsection{Languages}
+
+\begin{itemize}[label=$\bullet$, leftmargin=*]
+	\item \textbf{English}: \textit{Native} \item \textbf{Spanish}: \textit{Intermediate} (Description)
+\end{itemize}
+
+\end{document}

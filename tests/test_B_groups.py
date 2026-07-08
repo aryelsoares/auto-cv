@@ -29,7 +29,7 @@ def test_career(cv):
 
 # Contact
 def test_contact(cv):
-    data = r'\faLinkedin \hspace{0.1cm} \href{https://www.linkedin.com/in/example/}{\underline{My Linkedin}} | \faGithub \hspace{0.1cm} \href{https://github.com/example}{\underline{My Github}}'
+    data = '\\centerline{\\faEnvelope \\hspace{0.1cm} \\href{example@gmail.com}{\\underline{My Email}}}\\vspace{0.3em}\n\\centerline{\\faLinkedin \\hspace{0.1cm} \\href{https://www.linkedin.com/in/example/}{\\underline{My Linkedin}} | \\faGithub \\hspace{0.1cm} \\href{https://github.com/example}{\\underline{My Github}}}\\vspace{0.3em}'
     assert groups.contact(cv) == data
 
 # Summary
@@ -71,7 +71,7 @@ def test_education(cv):
     data = r'''\customsection{Education}
 
 \begin{itemize}[label=$\bullet$, leftmargin=*]
-\item \textbf{Software Engineering} | \textbf{Harvard}\hfill \faCalendar\ \textit{2006 - 2010} \\[10pt]\textbf{Grade}: Description.
+\item \textbf{Software Engineering} | \textbf{Harvard}\hfill \faCalendar\ \textit{2006 - 2010} \\[10pt]\textbf{grade}: Description.
 \end{itemize}'''
 
     assert normalize(groups.education(cv)) == normalize(data)

@@ -10,30 +10,35 @@ def career(data: dict) -> str:
 
 # Contact
 def contact(data: dict) -> str:
-    contactData = []
     contacts = toList(data['head']['contact'])
-
+    lines = {}
+    
     for contact in contacts:
         icon = tex(contact.get('@icon', ''))
         link = tex(contact.get('@link', ''))
         name = tex(contact.get('@name', ''))
-
         piece = ''
+        
         if icon:
-            piece += r'\fa%s \hspace{0.1cm} ' % (icon)
+            piece += rf'\fa{icon} \hspace{{0.1cm}} '
         if link:
-            piece += r'\href{%s}{\underline{%s}}' % (link, name)
-        else:
-            piece += r'{%s}' % (name)
-
-        contactData.append(piece)
+            piece += rf'\href{{{link}}}{{\underline{{{name}}}}}'
+        else: piece += rf'{{{name}}}'
+        
+        line = int(contact.get('@line', 1))
+        lines.setdefault(line, []).append(piece)
     
-    return ' | '.join(contactData)
+    orderedLines = []
+    for line in sorted(lines.keys()):
+        content = ' | '.join(lines[line])
+        orderedLines.append(rf'\centerline{{{content}}}')
+    
+    return '\n'.join(rf'{line}\vspace{{0.3em}}' for line in orderedLines)
 
 # Summary
 def summary(data: dict) -> str:
     if 'summary' not in data:
-        return
+        return ''
 
     summaryStr = ''
     summaryName = 'Summary'
@@ -42,7 +47,7 @@ def summary(data: dict) -> str:
     if summaryReplace:
         summaryName = summaryReplace
 
-    summaryStr += r'\customsection{%s}' % (summaryName)
+    summaryStr += rf'\customsection{{{summaryName}}}'
     summaryStr += '\n\n'
     summaryStr += r'\vspace{1.5em}'
     summaryStr += '\n\n'
@@ -62,7 +67,7 @@ def experience(data: dict) -> str:
     if experiencesReplace:
         experiencesName = experiencesReplace
 
-    experienceStr += r'\customsection{%s}' % (experiencesName)
+    experienceStr += rf'\customsection{{{experiencesName}}}'
     experienceStr += '\n\n'
     experienceStr += r'\begin{itemize}[leftmargin=*]'
     experienceStr += '\n'
@@ -74,8 +79,8 @@ def experience(data: dict) -> str:
         companyExperience = tex(experience['@company'])
         dateExperience = tex(experience['@date'])
         experienceStr += '\t'
-        experienceStr += r'\item \textbf{%s} ' % (roleExperience)
-        experienceStr += r'( \faInstitution \hspace{0.05cm} %s | \faCalendar \hspace{0.1cm} %s )' % (companyExperience, dateExperience)
+        experienceStr += rf'\item \textbf{{{roleExperience}}} '
+        experienceStr += rf'( \faInstitution \hspace{{0.05cm}} {companyExperience} | \faCalendar \hspace{{0.1cm}} {dateExperience} )'
         experienceStr += r'\vspace{0.5em} \\'
         experienceStr += '\n'
 
@@ -83,7 +88,7 @@ def experience(data: dict) -> str:
 
         for i, info in enumerate(infos):
             infoExperience = tex(info['@text'])
-            experienceStr += r'%s' % (infoExperience)
+            experienceStr += infoExperience
             if i < len(infos) - 1:
                 experienceStr += r' \\'
                 experienceStr += '\n\t'
@@ -106,7 +111,7 @@ def project(data: dict) -> str:
     if projectsReplace:
         projectsName = projectsReplace
 
-    projectStr += r'\customsection{%s}' % (projectsName)
+    projectStr += rf'\customsection{{{projectsName}}}'
     projectStr += '\n\n'
     projectStr += r'\begin{itemize}[label=$\bullet$, leftmargin=*]'
     projectStr += '\n'
@@ -116,7 +121,7 @@ def project(data: dict) -> str:
     for project in projects:
         nameProject = tex(project['@name'])
         projectStr += '\t'
-        projectStr += r'\item \textbf{%s} ( ' % (nameProject)
+        projectStr += rf'\item \textbf{{{nameProject}}} ( '
 
         refs = project['refs']['ref']
         if not isinstance(refs, list):
@@ -126,8 +131,8 @@ def project(data: dict) -> str:
             linkRef = tex(ref['@link'])
             nameRef = tex(ref['@name'])
             if iconRef != '':
-                projectStr += r'\fa%s \hspace{0.1cm} ' % (iconRef)
-            projectStr += r'\href{%s}{\underline{%s}} ' % (linkRef, nameRef)
+                projectStr += rf'\fa{iconRef} \hspace{{0.1cm}} '
+            projectStr += rf'\href{{{linkRef}}}{{\underline{{{nameRef}}}}} '
             if i < len(refs) - 1:
                 projectStr += ' | '
             else:
@@ -140,7 +145,7 @@ def project(data: dict) -> str:
         for i, info in enumerate(description):
             textInfo = tex(info['@text'])
             projectStr += projectDesc
-            projectStr += r'%s' % (textInfo)
+            projectStr += textInfo
             if i < len(description) - 1:
                 projectStr += r' \\'
                 projectStr += '\n\t'
@@ -163,7 +168,7 @@ def education(data: dict) -> str:
     if educationsReplace:
         educationsName = educationsReplace
         
-    educationStr += r'\customsection{%s}' % (educationsName)
+    educationStr += rf'\customsection{{{educationsName}}}'
     educationStr += '\n\n'
     educationStr += r'\begin{itemize}[label=$\bullet$, leftmargin=*]'
     educationStr += '\n'
@@ -176,11 +181,11 @@ def education(data: dict) -> str:
         date = tex(education['@date'])
         grade = tex(education['@grade'])
 
-        educationStr += r'\item \textbf{%s} | \textbf{%s}' %(field, institution)
+        educationStr += rf'\item \textbf{{{field}}} | \textbf{{{institution}}}'
 
-        educationStr += r'\hfill \faCalendar\ \textit{%s} \\[10pt]' % date
+        educationStr += rf'\hfill \faCalendar\ \textit{{{date}}} \\[10pt]'
 
-        educationStr += r'\textbf{Grade}: %s' % grade
+        educationStr += rf'\textbf{{grade}}: {grade}'
         educationStr += '\n'
 
     educationStr += r'\end{itemize}'
@@ -199,7 +204,7 @@ def skill(data: dict) -> str:
     if skillsReplace:
         skillsName = skillsReplace
 
-    skillStr += r'\customsection{%s}' % (skillsName)
+    skillStr += rf'\customsection{{{skillsName}}}'
     skillStr += '\n\n'
     skillStr += r'\begin{itemize}[label=$\bullet$, leftmargin=*]'
     skillStr += '\n\t'
@@ -207,7 +212,7 @@ def skill(data: dict) -> str:
 
     for i, field in enumerate(fields):
         nameField = tex(field['@name'])
-        skillStr += r'\item \textbf{%s}: ' % (nameField)
+        skillStr += rf'\item \textbf{{{nameField}}}: '
 
         skillData = []
         skillList = toList(field['skill'])
@@ -224,3 +229,38 @@ def skill(data: dict) -> str:
     skillStr += r'\end{itemize}'
 
     return skillStr
+
+# Languages
+def language(data: dict) -> str:
+    if 'languages' not in data:
+        return ''
+
+    languageStr = ''
+    languagesName = 'Languages'
+    languagesReplace = tex(data.get('@languages', ''))
+
+    if languagesReplace:
+        languagesName = languagesReplace
+    
+    languageStr += rf'\customsection{{{languagesName}}}'
+    languageStr += '\n\n'
+    languageStr += r'\begin{itemize}[label=$\bullet$, leftmargin=*]'
+    languageStr += '\n\t'
+    languages = toList(data['languages']['language'])
+
+    for language in languages:
+        name = tex(language['@name'])
+        level = tex(language['@level'])
+        desc = "(" + tex(language.get('@desc', '')) + ")"
+
+        if desc == "()":
+            desc = ""
+
+        languageStr += rf'\item \textbf{{{name}}}: '
+        languageStr += rf'\textit{{{level}}} '
+        languageStr += desc
+
+    languageStr += '\n'
+    languageStr += r'\end{itemize}'
+
+    return languageStr

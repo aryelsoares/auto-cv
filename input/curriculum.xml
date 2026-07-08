@@ -5,38 +5,41 @@
     <!-- Heading -->
 
     <head author="Aryel Soares" career="Backend Developer">
-        <contact icon="Envelope" link="" name="aryelsoares.dev@gmail.com"/>
-        <contact icon="Globe" link="https://aryelsoares.vercel.app" name="Portfolio"/>
-        <contact icon="Linkedin" link="https://www.linkedin.com/in/aryelsoares" name="Linkedin"/>
-        <contact icon="Github" link="https://github.com/aryelsoares" name="GitHub"/>
+        <contact icon="Envelope" link="" name="aryelsoares.dev@gmail.com" line="1"/>
+        <contact icon="Globe" link="https://aryelsoares.vercel.app" name="Portfolio" line="1"/>
+        <contact icon="Linkedin" link="https://www.linkedin.com/in/aryelsoares" name="Linkedin" line="1"/>
+        <contact icon="Github" link="https://github.com/aryelsoares" name="GitHub" line="1"/>
     </head>
 
     <!-- Summary -->
 
-    <summary area="Early-career mathematician and programmer with a solid foundation in programming logic and data analysis. I am interested in automation, systems integration, and AI applications, seeking my first opportunity to work on developing solutions that optimize processes and meet real customer needs."/>
+    <summary area="Early-career mathematician and software developer with a strong foundation in programming logic, data analysis, and automation. I work as a freelancer developing system integrations and AI-driven solutions, with a focus on optimizing processes and delivering practical value to client needs."/>
 
     <!-- Projects -->
 
     <projects>
-        <project name="Stringler">
+        <project name="ARIMA Analyzer">
             <refs>
-                <ref icon="Github" link="https://github.com/aryelsoares/clusters" name="GitHub"/>
+                <ref icon="Globe" link="https://arima-analyzer.vercel.app" name="Link" />
             </refs>
             <description>
-                <info text="Faced with the need to automate and analyze multiple textual documents efficiently, I built a
-modular NLP pipeline with a Rust analytics core and Python scripts for sentiment analysis, visualization, and reporting. The tool generates statistical and sentiment insights in a customizable
-template with text and graphics using Matplotlib and Pillow."/>
+                <info text="Developed an interactive web-based tool for time series analysis and forecasting using ARIMA models." />
+                <info text="Implements automated stationarity and seasonality testing, model selection, and forecasting." />
+                <info text="Provides interactive visualizations for training, test, and forecasted data, supporting analytical usage." />
+                <info text="Built with TypeScript, React, Tailwind CSS, Next.js, and Plotly." />
+                <info text="Reduced manual analysis time by up to ~90% compared to traditional ARIMA modeling workflows." />
             </description>
         </project>
         <project name="Hardware Benchmark">
             <refs>
-                <ref icon="Github" link="https://github.com/aryelsoares/datalink" name="GitHub"/>
+                <ref icon="Github" link="https://github.com/aryelsoares/datalink" name="GitHub" />
             </refs>
             <description>
-                <info text="To address the lack of real-time PC component monitoring, I designed a system to collect and
-display performance data (CPU, GPU, RAM) in real time. Built using Rust, InfluxDB, and Grafana
-in Docker Compose, it delivers dashboards with usage, temperature, and energy metrics from
-multiple IoT sensor inputs, facilitating access to inferential analysis." />
+                <info text="Designed and implemented a system to collect, store, and visualize real-time hardware metrics." />
+                <info text="Monitors CPU, GPU, and RAM usage, temperature, and energy consumption." />
+                <info text="Delivers interactive dashboards enabling exploratory and inferential performance analysis." />
+                <info text="Built using Rust for data ingestion, InfluxDB for time series storage, and Grafana for visualization." />
+                <info text="Reduced manual performance diagnostics time by ~70% while enabling real-time hardware benchmark." />
             </description>
         </project>
     </projects>
@@ -54,41 +57,45 @@ multiple IoT sensor inputs, facilitating access to inferential analysis." />
     <!-- Skills -->
 
     <skills>
-        <!-- Idiomas -->
-        <field name="Languages">
-            <skill name="Portuguese (Native)"/>
-            <skill name="English (Intermediate)"/>
-        </field>
         <!-- Backend -->
-        <field name="Backend">
+        <field name="Backend development">
             <skill name="Rust"/>
             <skill name="Python"/>
             <skill name="Tensorflow"/>
+            <skill name="Flask"/>
             <skill name="NodeJS"/>
         </field>
         <!-- Frontend -->
-        <field name="Frontend">
+        <field name="Frontend development">
             <skill name="JavaScript"/>
             <skill name="TypeScript"/>
             <skill name="React"/>
             <skill name="Tailwind"/>
         </field>
-        <!-- DevOps -->
-        <field name="DevOps">
-            <skill name="Bash"/>
-            <skill name="Git"/>
-            <skill name="Docker"/>
-        </field>
         <!-- Storage -->
-        <field name="Storage">
+        <field name="Data storage">
             <skill name="MySQL"/>
             <skill name="PostgreSQL"/>
+            <skill name="SQLite"/>
+            <skill name="MongoDB"/>
             <skill name="InfluxDB"/>
         </field>
-        <!-- Tools -->
-        <field name="Tools">
+        <!-- DevOps -->
+        <field name="Automation and tools">
+            <skill name="Bash"/>
+            <skill name="Git"/>
+            <skill name="GitHub Actions"/>
+            <skill name="Docker"/>
+            <skill name="Ollama"/>
             <skill name="Grafana"/>
         </field>
     </skills>
+
+    <!-- Languages -->
+
+    <languages>
+        <language name="Portuguese" level="Native" />
+        <language name="English" level="Intermediate" desc="read, write and listen" />
+    </languages>
 
 </category>

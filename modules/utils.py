@@ -8,7 +8,8 @@ RENDERERS = {
     "experience": groups.experience,
     "project": groups.project,
     "education": groups.education,
-    "skill": groups.skill
+    "skill": groups.skill,
+    "language": groups.language
 }
 
 # Start latex
@@ -48,7 +49,7 @@ def begin(data: dict) -> str:
 
 \pagestyle{empty}
 
-\centerline{\textbf{\huge %(author)s}}
+\centerline{\textbf{\Huge %(author)s}}
 
 \bigskip
 
@@ -56,7 +57,7 @@ def begin(data: dict) -> str:
 
 \bigskip
 
-\centerline{%(contact)s}
+%(contact)s
 
 %(summary)s
 
@@ -68,6 +69,8 @@ def begin(data: dict) -> str:
 
 %(skill)s
 
+%(language)s
+
 \end{document}''' % rendered
 
 # CV Class
@@ -76,7 +79,7 @@ class AutoCV:
         self._template = template
         self._result: str | None = None
 
-    def fit(self) -> str:
+    def fit(self):
         self._result = begin(self._template)
 
     @property

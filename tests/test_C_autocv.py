@@ -3,7 +3,7 @@ import xmltodict
 from modules.utils import begin, AutoCV
 
 # Input Example Size
-INPUT_SIZE = 1818
+INPUT_SIZE = 2113
 
 # Util Test
 @pytest.fixture

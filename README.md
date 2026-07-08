@@ -12,6 +12,7 @@ This project uses a prototype resume developed in LaTeX that can be edited using
 * Projects
 * Education
 * Skills
+* Languages
 
 ## 🛠️ How to Use
 
